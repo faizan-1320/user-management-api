@@ -115,8 +115,7 @@ def update_user(db: Session, user_id: int, user_data: dict):
     except IntegrityError as e:
         db.rollback()
         raise HTTPException(
-            status_code=400,
-            detail="Update failed: cellnumber or email already exists."
+            status_code=400, detail="Update failed: cellnumber or email already exists."
         )
 
     return db_user

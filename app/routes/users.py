@@ -6,7 +6,7 @@ from app.crud import user as crud_user
 from app.utils.security import get_current_admin, get_current_user
 from app.database import get_db
 from app.schemas.user import User, UserOut
-from app.utils.validators import validate_name, validate_cellnumber
+from app.utils.validators import validate_name, validate_cellnumber,validate_image_upload
 from pydantic import EmailStr
 from datetime import datetime
 import os
@@ -35,6 +35,8 @@ def create_user(
 
     profilepic_url = None
     if profilepic:
+        validate_image_upload(profilepic)
+
         folder = "static/profile_pics"
         os.makedirs(folder, exist_ok=True)
         filepath = os.path.join(folder, profilepic.filename)
@@ -99,6 +101,7 @@ def update_user(
         update_data["cellnumber"] = cellnumber
 
     if profilepic:
+        validate_image_upload(profilepic)
         UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
         filename = f"{datetime.utcnow().timestamp()}_{profilepic.filename}"
