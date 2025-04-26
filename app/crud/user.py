@@ -109,8 +109,16 @@ def update_user(db: Session, user_id: int, user_data: dict):
     for key, value in user_data.items():
         setattr(db_user, key, value)
 
-    db.commit()
-    db.refresh(db_user)
+    try:
+        db.commit()
+        db.refresh(db_user)
+    except IntegrityError as e:
+        db.rollback()
+        raise HTTPException(
+            status_code=400,
+            detail="Update failed: cellnumber or email already exists."
+        )
+
     return db_user
 
 
