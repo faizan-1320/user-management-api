@@ -110,7 +110,7 @@ def update_user(
         with open(file_path, "wb") as f:
             f.write(profilepic.file.read())
 
-        update_data["profilepic"] = f"profilepics/{filename}"
+        update_data["profilepic"] = f"static/profilepics/{filename}"
 
     return crud.user.update_user(db=db, user_id=user_id, user_data=update_data)
 
