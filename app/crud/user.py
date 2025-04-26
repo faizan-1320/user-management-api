@@ -3,6 +3,7 @@ from app.models.user import User
 from datetime import datetime, timezone
 from sqlalchemy.exc import IntegrityError
 from fastapi import HTTPException, status
+from app.utils.validators import validate_password
 
 
 def get_user(db: Session, user_id: int):
@@ -36,6 +37,8 @@ def create_user(
     roleId: int,
     profilepic: str = None,
 ):
+    validate_password(password)
+
     from app.utils.security import get_password_hash
 
     hashed_password = get_password_hash(password)
