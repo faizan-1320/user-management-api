@@ -5,38 +5,37 @@ A simple, clean, and modular FastAPI project for user authentication and managem
 Python 3.10.12
 
 📂 Project Structure
-
+```
 user-management-api/
-│
 ├── app/
 │   ├── __init__.py
 │   ├── main.py                 # FastAPI application entry point
-│   ├── database.py             # Database connection and session
-|   ├── create_admin.py         # Create admin
-│   ├── models/                 # SQLAlchemy ORM models
+│   ├── database.py              # Database connection and session
+│   ├── create_admin.py          # Script to create admin user
+│   ├── models/                  # SQLAlchemy ORM models
 │   │   ├── __init__.py
 │   │   ├── user.py
 │   │   └── token.py
-│   ├── schemas/                # Pydantic schemas for request and response
+│   ├── schemas/                 # Pydantic schemas for request and response validation
 │   │   ├── __init__.py
 │   │   ├── user.py
 │   │   └── token.py
-│   ├── crud/                   # Database CRUD operations
+│   ├── crud/                    # CRUD operations for database interaction
 │   │   ├── __init__.py
 │   │   ├── user.py
 │   │   └── token.py
-│   ├── routes/                 # API routes
+│   ├── routes/                  # API endpoints
 │   │   ├── __init__.py
 │   │   ├── users.py
 │   │   └── auth.py
-│   └── utils/                  # Utility functions (e.g., hashing, constants)
+│   └── utils/                   # Utility/helper functions
 │       ├── __init__.py
 │       ├── security.py
 │       └── constants.py
-│
-├── requirements.txt             # Python dependencies
-├── README.md                    # Project documentation
-└── .env                         # Environment variables
+├── requirements.txt             # Project dependencies
+├── README.md                     # Project documentation
+└── .env                          # Environment variables
+```
 
 ⚙️ Environment Variables
 Create a .env file in the project root and add the following:
