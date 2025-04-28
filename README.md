@@ -49,6 +49,7 @@ SECRET_KEY=your_secret_key_for_jwt
 ```
 
 🛠️ Setup Instructions
+```
 1. Clone the repository
 git clone https://github.com/faizan-1320/user-management-api.git
 cd user-management-api
@@ -66,3 +67,4 @@ uvicorn app.main:app --reload
 
 5. Access the API docs
 Swagger UI: http://localhost:8000/docs
+```
