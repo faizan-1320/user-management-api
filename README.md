@@ -15,6 +15,7 @@ user-management-api/
 │   ├── models/                  # SQLAlchemy ORM models
 │   │   ├── __init__.py
 │   │   ├── user.py
+│   │   └── role.py
 │   │   └── token.py
 │   ├── schemas/                 # Pydantic schemas for request and response validation
 │   │   ├── __init__.py
