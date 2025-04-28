@@ -38,6 +38,7 @@ user-management-api/
 ```
 
 ⚙️ Environment Variables
+```
 Create a .env file in the project root and add the following:
 DB_USER=your_database_username
 DB_PASSWORD=your_database_password
@@ -45,6 +46,7 @@ DB_HOST=your_database_host
 DB_PORT=your_database_port
 DB_NAME=your_database_name
 SECRET_KEY=your_secret_key_for_jwt
+```
 
 🛠️ Setup Instructions
 1. Clone the repository
